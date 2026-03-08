@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipes</title>
+
+    <link rel="stylesheet" href="stylesheet/general.css">
+    <link rel="stylesheet" href="stylesheet/index.css">
+
+    <script src="js/index.js" defer></script>
+
+    <link rel="icon" type="image/png" sizes="32x32" href="recipesfavicon.webp">
+
+    <link href="https://fonts.googleapis.com/css2?family=Italianno&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html"><img class="logo" src="recipeacelogo.webp" alt="logo"></a>
+    </header>
+    <main>
+        <div class="forside-title">
+            <h1>RECI-PEACE!</h1>
+        </div>
+        <div class="main-box">
+            <div id="sidepanel">
+                <div class="button-box">
+                    <h3>Sorting</h3>
+                    <div class="inner-box">
+                        <button class="filterBtn" id="sortByTime">Sort by cooking time</button>
+                        <button class="filterBtn" id="sortByAlphabet">Sort by alphabet</button>
+                        <button class="filterBtn" id="resetBtn">Reset</button>
+                    </div>
+                </div>
+                <div class="button-box">
+                    <h3>Difficulty filters</h3>
+                    <div class="inner-box">
+                        <button class="filterBtn" id="filterByEasy">Easy</button>
+                        <button class="filterBtn" id="filterByMedium">Medium</button>
+                    </div>
+                </div>
+                <div class="button-box">
+                    <h3>Time filters</h3>
+                    <div class="inner-box">
+                        <button class="filterBtn" id="filterByPrep">Under 20 minutes prep</button>
+                        <button class="filterBtn" id="filterByCook">Under 20 minutes cooking</button>
+                    </div>
+                </div>
+                <div class="button-box">
+                    <h3>Servings filters</h3>
+                    <div class="inner-box">
+                        <button class="filterBtn" id="filterByLess">4 servings or less</button>
+                        <button class="filterBtn" id="filterByMore">4 servings or more</button>
+                    </div>
+                </div>
+            </div>
+            <div id="recipe-box">
+
+            </div>
+        </div>
+    </main>
+</body>
+
+</html>

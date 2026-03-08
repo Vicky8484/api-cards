@@ -1,0 +1,79 @@
+.recipe {
+  background-color: wheat;
+  border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 70%;
+  margin-block: 2rem;
+  padding: 1rem;
+}
+
+.recipe img {
+  width: 40%;
+  border-radius: 10px;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+}
+
+.recipe h4 {
+  font-size: 2rem;
+}
+
+.product-header {
+  display: flex;
+}
+
+.product-details {
+  padding-left: 1rem;
+}
+
+.product-recipe {
+  padding: 1rem;
+  border-top: 2px solid #c56a4b;
+  margin-top: 1rem;
+}
+
+summary {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: #c56a4b;
+  padding: 0.5rem 1rem;
+}
+
+ul {
+  padding-left: 2rem;
+  margin-block: 1rem;
+}
+
+li {
+  padding-block: 5px;
+}
+
+.more-info {
+  padding-left: 2rem;
+  margin-block: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #c56a4b;
+}
+
+@media screen and (max-width: 768px) {
+  .recipe {
+    width: 90%;
+  }
+
+  .recipe img {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .product-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .product-details {
+    padding-left: 0;
+    text-align: center;
+  }
+}
