@@ -1,7 +1,7 @@
 const params = new URLSearchParams(window.location.search);
 const myCategory = params.get("recipes");
 
-const listURL = "https://dummyjson.com/recipes";
+const listURL = "https://dummyjson.com/recipes?limit=100";
 console.log(listURL);
 const listContainer = document.querySelector("#recipe-box");
 
