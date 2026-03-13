@@ -34,6 +34,15 @@ function showRecipes(recipes) {
                  <div class="space">
    <p>Difficulty</p> <p>${recipe.difficulty}</p>
                 </div>
+
+    
+  <div class="space">
+   <p>Ingredients</p> <p>${recipe.ingredients.length}</p>
+                </div>
+
+         <div class="space">
+   <p>Kalorier</p> <p>${recipe.caloriesPerServing}</p>
+                </div>
 <br>
                 <a class="recipeBtn" href="details.html?recipeId=${recipe.id}">Recipe</a>
             </article>
@@ -41,8 +50,7 @@ function showRecipes(recipes) {
   });
 }
 
-// Cooking tid Sortering
-const sortByTimeBtn = document.querySelector("#sortByTime");
+//Filtrer
 const showAllBtn = document.querySelector("#resetBtn");
 
 let allRecipes = [];
@@ -56,49 +64,6 @@ function getRecipes() {
     });
 }
 
-function sortTime() {
-  console.log("sort by time");
-  const sorted = [...allRecipes].sort((a, b) => a.cookTimeMinutes - b.cookTimeMinutes); // sortér efter cooking time
-  showRecipes(sorted); // vis sorteret liste
-}
-
-sortByTimeBtn.addEventListener("click", sortTime);
-showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
-
-// Alphabet Sortering
-const sortByAlphabetBtn = document.querySelector("#sortByAlphabet");
-
-function sortAlphabet() {
-  console.log("sort by alphabet");
-  const az = [...allRecipes].sort((a, b) => a.name.localeCompare(b.name, "da")); // sortér efter navn
-  showRecipes(az); // vis sorteret liste
-}
-
-sortByAlphabetBtn.addEventListener("click", sortAlphabet);
-showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
-
-// Easy Sortering
-const filterByEasyBtn = document.querySelector("#filterByEasy");
-
-function filterByEasy() {
-  const filtered = allRecipes.filter((recipe) => (recipe.difficulty = "Easy"));
-
-  showRecipes(filtered);
-}
-
-filterByEasyBtn.addEventListener("click", filterByEasy);
-showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
-
-// Medium Sortering
-const filterByMediumBtn = document.querySelector("#filterByMedium");
-
-function filterByMedium() {
-  const filtered = allRecipes.filter((recipe) => (recipe.difficulty = "Medium"));
-
-  showRecipes(filtered);
-}
-
-filterByMediumBtn.addEventListener("click", filterByMedium);
 showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
 
 // Under 20 min prep Filter
@@ -123,6 +88,54 @@ function filterByCook() {
 }
 
 filterCookBtn.addEventListener("click", filterByCook);
+showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
+
+// Under 10 Ingredients Filter
+const filterByIn = document.querySelector("#filterByIngredients");
+
+function filterByIngredients() {
+  const filtered = allRecipes.filter((recipe) => recipe.ingredients.length < 10);
+
+  showRecipes(filtered);
+}
+
+filterByIn.addEventListener("click", filterByIngredients);
+showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
+
+// Over 10 Ingredients Filter
+const filterByIn2 = document.querySelector("#filterByIngredients2");
+
+function filterByIngredients2() {
+  const filtered = allRecipes.filter((recipe) => recipe.ingredients.length > 10);
+
+  showRecipes(filtered);
+}
+
+filterByIn2.addEventListener("click", filterByIngredients2);
+showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
+
+// Under 300 calories Filter
+const filterByCal = document.querySelector("#filterByCalories");
+
+function filterByCalories() {
+  const filtered = allRecipes.filter((recipe) => recipe.caloriesPerServing <= 300);
+
+  showRecipes(filtered);
+}
+
+filterByCal.addEventListener("click", filterByCalories);
+showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
+
+// Under 500 calories Filter
+const filterByCal2 = document.querySelector("#filterByCalories2");
+
+function filterByCalories2() {
+  const filtered = allRecipes.filter((recipe) => recipe.caloriesPerServing <= 500);
+
+  showRecipes(filtered);
+}
+
+filterByCal2.addEventListener("click", filterByCalories2);
 showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
 
 // 4 or less servings Filter
@@ -150,3 +163,23 @@ filterMoreBtn.addEventListener("click", filterByMore);
 showAllBtn.addEventListener("click", () => showRecipes(allRecipes));
 
 getRecipes();
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function (event) {
+  if (!event.target.matches(".dropbtn")) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains("show")) {
+        openDropdown.classList.remove("show");
+      }
+    }
+  }
+};
