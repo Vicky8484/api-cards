@@ -26,35 +26,24 @@
         </div>
         <div class="main-box">
             <div id="sidepanel">
-                <div class="button-box">
-                    <h3>Sorting</h3>
-                    <div class="inner-box">
-                        <button class="filterBtn" id="sortByTime">Sort by cooking time</button>
-                        <button class="filterBtn" id="sortByAlphabet">A-Z</button>
-                        <button class="filterBtn" id="resetBtn">Reset</button>
-                    </div>
-                </div>
-                <div class="button-box">
-                    <h3>Difficulty filters</h3>
-                    <div class="inner-box">
-                        <button class="filterBtn" id="filterByEasy">Easy</button>
-                        <button class="filterBtn" id="filterByMedium">Medium</button>
-                    </div>
-                </div>
-                <div class="button-box">
-                    <h3>Time filters</h3>
-                    <div class="inner-box">
+                <!--Dropdownnnnn-->
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn">Filters</button>
+                    <div id="myDropdown" class="dropdown-content">
                         <button class="filterBtn" id="filterByPrep">Under 20 minutes prep</button>
                         <button class="filterBtn" id="filterByCook">Under 20 minutes cooking</button>
-                    </div>
-                </div>
-                <div class="button-box">
-                    <h3>Servings filters</h3>
-                    <div class="inner-box">
                         <button class="filterBtn" id="filterByLess">4 servings or less</button>
                         <button class="filterBtn" id="filterByMore">4 servings or more</button>
+                        <button class="filterBtn" id="filterByIngredients">Under 10 Ingredienser</button>
+                        <button class="filterBtn" id="filterByIngredients2">Over 10 Ingredienser</button>
+                        <button class="filterBtn" id="filterByCalories">Under 300 kalorier</button>
+                        <button class="filterBtn" id="filterByCalories2">Under 500 kalorier</button>
                     </div>
                 </div>
+
+                <!--Dropdownnnnn-->
+                <button class="filterBtn" id="resetBtn">Vis alle</button>
+
             </div>
             <div id="recipe-box">
 
